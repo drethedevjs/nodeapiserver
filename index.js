@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost/Peopledb', {
     useUnifiedTopology: true // opts in to using the new topology engine. Without this, there will be deprecation warnings because of a refactor.
 });
 
-// Setting up body parser in order for our payloads to be usable with/readable by the api
+// Setting up body parser in order for the payloads to be usable with/readable by the api
 app.use(bodyParser.urlencoded({ extended: true })) // parses the bodies of the http requests
 app.use(bodyParser.json()); // parses json objects and adds information to the body property of the request obj
 
@@ -21,9 +21,10 @@ routes(app);
 
 // Allows you to verify via the browser that the server is up and running
 app.get('/', (req, res) =>
-    res.send(`Node and express server running on port ${PORT}`)
+res.send(`Node and express server running on port ${PORT}`)
 );
 
+// Allows you to verify via the console that the server is up and running
 app.listen(PORT, () =>
     console.log(`Server running on port ${PORT}`)
 );
