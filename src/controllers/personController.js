@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 import { PeopleSchema } from '../models/personModel'
 
-// Creating a model using the PeopleSchema in order to pass relavent data to the db
+// Creating a model using the PeopleSchema in order make calls to the database
 const People = mongoose.model('People', PeopleSchema);
 
 export const addPerson = (req, res) => {
@@ -17,4 +17,15 @@ export const addPerson = (req, res) => {
         // Adding the new information from the db to the json object being returned
         res.json(person);
     })
+}
+
+export const getPerson = (req, res) => {
+    // console.log("LOOK HEREEEEEEE!!!!", req.params.name);
+    People.find({name: req.params.name}, (err, person) => {
+        if(err) 
+            res.send(err);
+    
+        // Adding the retrieved information from the db to the json object being returned
+        res.json(person);
+    });
 }

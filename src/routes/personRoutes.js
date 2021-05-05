@@ -1,14 +1,13 @@
-import { addPerson } from '../controllers/personController'
+import { addPerson, getPerson } from '../controllers/personController'
+
 const routes = (app) => {
     app.route('/sparkpost/:name')
-        .get((req, res) => {
-            res.send("Hit it!");
-        })
+        .get(getPerson)
         
         
     app.route('/sparkpost')
         
-        .post(addPerson, person)
+        .post(addPerson)
 
         .put((req, res) => {
             res.send("updated!")
