@@ -5,12 +5,9 @@ const routes = (app) => {
         .get(getPerson)
         .put(updatePerson)
         
-        
     app.route('/sparkpost')
         .get(getAllPeople)
         .post(addPerson)
-
-        
 }
 
 export default routes;

@@ -6,7 +6,6 @@ const People = mongoose.model('People', PeopleSchema);
 
 // GET Methods
 export const getPerson = (req, res) => {
-    // Finding data where the name param equals the passed in query string
     People.find({name: req.params.name}, (err, person) => {
         if(err) 
             res.send(err);
@@ -28,7 +27,7 @@ export const getAllPeople = (req, res) => {
 
 // POST Methods
 export const addPerson = (req, res) => {
-    // Create a new person using the model creator above and the json obj that's being passed
+    // Create a new person using the model creator above and by using the json payload that's being passed
     // into the request.
     let newPerson = new People(req.body);
 

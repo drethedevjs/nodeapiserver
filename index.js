@@ -19,6 +19,7 @@ app.use(bodyParser.json()); // parses json objects and adds information to the b
 
 routes(app);
 
+// Allows you to verify via the browser that the server is up and running
 app.get('/', (req, res) =>
     res.send(`Node and express server running on port ${PORT}`)
 );
