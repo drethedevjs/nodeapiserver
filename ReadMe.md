@@ -1,7 +1,7 @@
 # Introduction
 ## Software Developer Candidate: Andre Thomas 
 
-This is an API server built using NodeJS to simply add objects to a mongodb database and it allows users to update those entries.
+This is an API server built using NodeJS to simply add objects to a mongodb database and it allows users to update those entries. I built this for a code challenge for a compamy that I was interviewing with.
 
 ## Setup
 ### Necessary Tools
